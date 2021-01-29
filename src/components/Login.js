@@ -6,7 +6,7 @@ import { axiosWithAuth } from "../helpers/axiosWithAuth";
 const Login = () => {
   // make a post request to retrieve a token from the api
   // when you have handled the token, navigate to the BubblePage route
-  // const { push } = useHistory();
+  const { push } = useHistory();
   const [formValues, setFormValues] = useState({
       username:'', 
       password: '',
@@ -30,7 +30,7 @@ const Login = () => {
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
         // change this berlw
-        // push("/friends");   
+        push("/bubbles");   
       })
       .catch((err) => console.log(err));
   };
