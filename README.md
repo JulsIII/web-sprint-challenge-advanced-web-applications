@@ -87,4 +87,4 @@ Follow these steps for completing your project.
 - [*] Ensure that your projects are complete on your <firstName-lastName> branch.
 - [*] Merge your <firstName-lastName> branch into your main branch.
 - [*] Push your main branch to github and check that it is registers within codegrade.
-- [ ] Check your personal feedback the following Monday. For more information check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-Student-facing-c5147cee220c4044a25de28bcb6bb54a)
+- [*] Check your personal feedback the following Monday. For more information check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-Student-facing-c5147cee220c4044a25de28bcb6bb54a)
