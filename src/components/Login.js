@@ -29,7 +29,6 @@ const Login = () => {
       .post("/api/login", formValues)
       .then((res) => {
         localStorage.setItem("token", res.data.payload);
-        // change this berlw
         push("/bubbles");   
       })
       .catch((err) => console.log(err));
