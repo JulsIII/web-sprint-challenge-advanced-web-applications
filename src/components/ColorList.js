@@ -9,7 +9,7 @@ const initialColor = {
   code: { hex: "" }
 };
 
-const ColorList = ({ colors, updateColors }) => {
+const ColorList = ({ colors, updateColorsA, updateColorsB}) => {
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
   const { id } = useParams();
@@ -26,7 +26,7 @@ const ColorList = ({ colors, updateColors }) => {
     .put(`http://localhost:5000/api/colors/${id}` , colorToEdit)
     .then((res) => {
       // console.log('***PUT***', res.data);
-      updateColors(colors.map(colorToEdit => {
+      updateColorsA(colors.map(colorToEdit => {
         if(colorToEdit.id === res.data.id) {
           return res.data;
         } else { 
@@ -43,7 +43,7 @@ const ColorList = ({ colors, updateColors }) => {
      
     .then((res) => {
       console.log('**DEL**', res.data)
-      updateColors(colors.filter((color) => color.id !== res.data));
+      updateColorsB(colors.filter((color) => color.id !== res.data));
       // push('/bubbles')
     })
     .catch((err) => console.log(err.response));
