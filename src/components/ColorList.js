@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import EditMenu from './EditMenu';
 import { axiosWithAuth } from "../helpers/axiosWithAuth";
-import { useParams, useHistory } from "react-router-dom";
+import { useParams, useHistory, Redirect } from "react-router-dom";
 import axios from "axios";
 
 const initialColor = {
@@ -13,6 +13,7 @@ const ColorList = ({ colors, updateColors }) => {
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
   const { id } = useParams();
+  const { push } = useHistory();
 
   const editColor = color => {
     setEditing(true);
@@ -23,18 +24,28 @@ const ColorList = ({ colors, updateColors }) => {
     e.preventDefault();
     axiosWithAuth()
     .put(`http://localhost:5000/api/colors/${id}` , colorToEdit)
-     
-    .then((res) => setColorToEdit(res.data)) //this is wrong
-    
+    .then((res) => {
+      // console.log('***PUT***', res.data);
+      updateColors(colors.map(colorToEdit => {
+        if(colorToEdit.id === res.data.id) {
+          return res.data;
+        } else { 
+          return colorToEdit; 
+        }
+      }))
+    }) 
     .catch((err) => console.log(err.response));
   };
 
   const deleteColor = color => {
     axiosWithAuth()
-    .put(`http://localhost:5000/api/colors/123`)
+    .delete(`http://localhost:5000/api/colors/${color.id}`)
      
-    .then((res) => setColorToEdit(res.data)) //also wrong
-    
+    .then((res) => {
+      console.log('**DEL**', res.data)
+      updateColors(colors.filter((color) => color.id !== res.data));
+      push('/bubbles')
+    })
     .catch((err) => console.log(err.response));
   };
 
