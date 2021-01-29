@@ -21,7 +21,6 @@ const BubblePage = () => {
 
   useEffect(() => {
     fetchColors();
-    // console.log('*****adsfssfsa', setColorList);
   }, []);
 
 

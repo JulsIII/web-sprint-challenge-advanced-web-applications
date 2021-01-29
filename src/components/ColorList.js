@@ -12,8 +12,8 @@ const initialColor = {
 const ColorList = ({ colors, updateColorsA, updateColorsB}) => {
   const [editing, setEditing] = useState(false);
   const [colorToEdit, setColorToEdit] = useState(initialColor);
-  const { id } = useParams();
-  const { push } = useHistory();
+  // const { id } = useParams();
+  // const { push } = useHistory();
 
   const editColor = color => {
     setEditing(true);
@@ -23,7 +23,7 @@ const ColorList = ({ colors, updateColorsA, updateColorsB}) => {
   const saveEdit = e => {
     e.preventDefault();
     axiosWithAuth()
-    .put(`http://localhost:5000/api/colors/${id}` , colorToEdit)
+    .put(`http://localhost:5000/api/colors/${colors.id}` , colorToEdit)
     .then((res) => {
       // console.log('***PUT***', res.data);
       updateColorsA(colors.map(colorToEdit => {
