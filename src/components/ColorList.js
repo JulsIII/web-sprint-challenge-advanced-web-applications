@@ -44,7 +44,7 @@ const ColorList = ({ colors, updateColors }) => {
     .then((res) => {
       console.log('**DEL**', res.data)
       updateColors(colors.filter((color) => color.id !== res.data));
-      push('/bubbles')
+      // push('/bubbles')
     })
     .catch((err) => console.log(err.response));
   };
