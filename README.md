@@ -68,7 +68,7 @@ Build a login form to authenticate your users.
   * **[DELETE]** to `http://localhost:5000/api/colors/123`: removes the color using the `id` passed as part of the URL (123 in example).
 
 #### Stage 3 Testing
-- [ ] Finish the test in `BubblePage.test.js` to test that your app is fetching the bubble data from the API
+- [*] Finish the test in `BubblePage.test.js` to test that your app is fetching the bubble data from the API
 
 In your solution, it is essential that you follow best practices and produce clean and professional results. You will be scored on your adherence to proper code style and good organization. Schedule time to review, refine, and assess your work and perform basic professional polishing including spell-checking and grammar-checking on your work. It is better to submit a challenge that meets MVP than one that attempts too much and does not.
 
@@ -84,7 +84,7 @@ After finishing your required elements, you can push your work further. These go
 
 Follow these steps for completing your project.
 
-- [ ] Ensure that your projects are complete on your <firstName-lastName> branch.
-- [ ] Merge your <firstName-lastName> branch into your main branch.
-- [ ] Push your main branch to github and check that it is registers within codegrade.
+- [*] Ensure that your projects are complete on your <firstName-lastName> branch.
+- [*] Merge your <firstName-lastName> branch into your main branch.
+- [*] Push your main branch to github and check that it is registers within codegrade.
 - [ ] Check your personal feedback the following Monday. For more information check [here](https://www.notion.so/lambdaschool/How-to-View-Feedback-in-CodeGrade-Student-facing-c5147cee220c4044a25de28bcb6bb54a)

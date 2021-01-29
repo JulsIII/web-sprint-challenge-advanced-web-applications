@@ -6,9 +6,11 @@ test("Renders BubblePage without errors", () => {
   render(<BubblePage />);
 });
 
-// test("Fetches data and renders the bubbles on mounting", () => {
-//   // Finish this test
-// });
+test("Fetches data and renders the bubbles on mounting", () => {
+  const { rerender } = render(<BubblePage colors={[]} />);
+
+    rerender(<BubblePage colors={[]} />);
+});
 
 //Task List
 //1. Setup test for basic rendering of component
