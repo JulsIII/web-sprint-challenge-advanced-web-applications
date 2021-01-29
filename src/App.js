@@ -16,5 +16,6 @@ function App() {
 
 export default App;
 
+
 //Task List:
 //1. Render BubblePage as a PrivateRoute
